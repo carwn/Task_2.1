@@ -15,7 +15,16 @@ extension ViewController: UICollectionViewDataSource {
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ImageCollectionViewCell
-        cell.configure(file: files[indexPath.row])
+        let file = files[indexPath.row]
+        cell.configure(file: file) { [weak self] in
+            guard let self = self else { return }
+            do {
+                try self.fileManager.removeFile(name: file.title)
+                self.reloadFiles()
+            } catch {
+                self.showError(error)
+            }
+        }
         return cell
     }
 }

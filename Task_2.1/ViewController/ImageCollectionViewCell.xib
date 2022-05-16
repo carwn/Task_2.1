@@ -19,6 +19,17 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cH9-wC-dCS">
                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EmX-DJ-cv0">
+                        <rect key="frame" x="56" y="0.0" width="44" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="44" id="iQD-oR-5xx"/>
+                            <constraint firstAttribute="height" constant="44" id="oPp-IV-rNb"/>
+                        </constraints>
+                        <buttonConfiguration key="configuration" style="plain"/>
+                        <connections>
+                            <action selector="deleteButtonPressed:" destination="gTV-IL-0wX" eventType="touchUpInside" id="WGP-in-Hit"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
@@ -27,6 +38,8 @@
                 <constraint firstItem="cH9-wC-dCS" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="dJO-2k-Vyj"/>
                 <constraint firstItem="cH9-wC-dCS" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="mv4-zQ-kx0"/>
                 <constraint firstAttribute="trailing" secondItem="cH9-wC-dCS" secondAttribute="trailing" id="nv9-k4-Ge0"/>
+                <constraint firstItem="EmX-DJ-cv0" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="oak-TI-7BR"/>
+                <constraint firstAttribute="trailing" secondItem="EmX-DJ-cv0" secondAttribute="trailing" id="ykE-G2-P5p"/>
             </constraints>
             <size key="customSize" width="476" height="310"/>
             <connections>
