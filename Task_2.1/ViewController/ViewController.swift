@@ -20,12 +20,13 @@ class ViewController: UIViewController {
         }
     }
     
-    private let fileManager = MyFileManager()
+    let fileManager = MyFileManager()
     private lazy var imageSaver = ImageSaver(delegate: self, fileManager: self.fileManager)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: String(describing: UITableViewCell.self))
+        tableView.allowsSelection = false
         [spinner, emptyLabel, tableView].forEach { $0.isHidden = true }
     }
     

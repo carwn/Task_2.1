@@ -34,4 +34,11 @@ class MyFileManager {
             throw MyFileManagerError.cantCreateFile
         }
     }
+    
+    func removeFile(name: String) throws {
+        guard let documentDirectory = documentDirectory else {
+            throw MyFileManagerError.cantGetDocumentDirectory
+        }
+        try fileManager.removeItem(at: documentDirectory.appendingPathComponent(name))
+    }
 }

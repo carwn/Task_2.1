@@ -20,4 +20,21 @@ extension ViewController: UITableViewDataSource {
         cell.imageView?.image = file.uiImage
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        guard editingStyle == .delete else {
+            return
+        }
+        let fileName = files[indexPath.row].title
+        do {
+            try fileManager.removeFile(name: fileName)
+            reloadFiles()
+        } catch {
+            showError(error)
+        }
+    }
 }
