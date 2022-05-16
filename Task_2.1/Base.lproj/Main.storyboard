@@ -16,14 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="uFX-2g-pEO">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="DQN-lh-CQs"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="hYG-r8-IKl"/>
-                                </connections>
-                            </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Empty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6x6-xb-KIN">
                                 <rect key="frame" x="164.5" y="429.5" width="85.5" height="37"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
@@ -33,17 +25,32 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="XMt-9i-Yk8">
                                 <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
                             </activityIndicatorView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cVG-1C-pHz">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7IE-Qa-wQK">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Ubz-wh-hEe"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="ZZG-6X-Yof"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="uFX-2g-pEO" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="3l1-CR-ip4"/>
                             <constraint firstItem="XMt-9i-Yk8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="48Y-Gp-AeP"/>
-                            <constraint firstAttribute="trailing" secondItem="uFX-2g-pEO" secondAttribute="trailing" id="OSy-hw-gK1"/>
+                            <constraint firstItem="cVG-1C-pHz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Bsj-Yv-O7i"/>
+                            <constraint firstItem="cVG-1C-pHz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="CVA-fe-07m"/>
                             <constraint firstItem="6x6-xb-KIN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="PJz-dH-wyI"/>
+                            <constraint firstAttribute="trailing" secondItem="cVG-1C-pHz" secondAttribute="trailing" id="VKC-NA-rk8"/>
                             <constraint firstItem="6x6-xb-KIN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YBC-YC-v5a"/>
-                            <constraint firstItem="uFX-2g-pEO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dtf-uw-x4X"/>
-                            <constraint firstAttribute="bottom" secondItem="uFX-2g-pEO" secondAttribute="bottom" id="kLi-pr-GMx"/>
+                            <constraint firstAttribute="bottom" secondItem="cVG-1C-pHz" secondAttribute="bottom" id="ncZ-hL-zOh"/>
                             <constraint firstItem="XMt-9i-Yk8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="yqD-bJ-b2e"/>
                         </constraints>
                     </view>
@@ -55,9 +62,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="collectionView" destination="cVG-1C-pHz" id="QP1-P4-gJ6"/>
                         <outlet property="emptyLabel" destination="6x6-xb-KIN" id="adb-ml-w8p"/>
                         <outlet property="spinner" destination="XMt-9i-Yk8" id="Cfh-D6-PvD"/>
-                        <outlet property="tableView" destination="uFX-2g-pEO" id="RBD-24-ZOv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

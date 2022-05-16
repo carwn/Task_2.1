@@ -9,25 +9,27 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var emptyLabel: UILabel!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     private(set) var files: [File] = [] {
         didSet {
-            tableView.reloadData()
+            collectionView.reloadData()
             updateUI()
         }
     }
     
     let fileManager = MyFileManager()
+    let reuseIdentifier = String(describing: ImageCollectionViewCell.self)
+    
     private lazy var imageSaver = ImageSaver(delegate: self, fileManager: self.fileManager)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: String(describing: UITableViewCell.self))
-        tableView.allowsSelection = false
-        [spinner, emptyLabel, tableView].forEach { $0.isHidden = true }
+        collectionView.register(UINib(nibName: "ImageCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
+        collectionView.allowsSelection = false
+        [spinner, emptyLabel, collectionView].forEach { $0.isHidden = true }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -65,7 +67,7 @@ class ViewController: UIViewController {
     private func updateUI() {
         let hasFiles = !files.isEmpty
         emptyLabel.isHidden = hasFiles
-        tableView.isHidden = !hasFiles
+        collectionView.isHidden = !hasFiles
     }
     
     @IBAction func addButtonPressed(_ sender: Any) {
