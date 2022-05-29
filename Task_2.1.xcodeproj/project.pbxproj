@@ -26,6 +26,13 @@
 		6D0C4FCC2831F8D70069BEF3 /* ImagesViewController+collectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C4FCB2831F8D70069BEF3 /* ImagesViewController+collectionView.swift */; };
 		6D0C4FCF2831F9750069BEF3 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C4FCD2831F9750069BEF3 /* ImageCollectionViewCell.swift */; };
 		6D0C4FD02831F9760069BEF3 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D0C4FCE2831F9750069BEF3 /* ImageCollectionViewCell.xib */; };
+		6D727CD22843BDCD009F3F3F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D727CD12843BDCD009F3F3F /* SettingsViewController.swift */; };
+		6D727CD52843BE1F009F3F3F /* SettingsViewController+tableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D727CD42843BE1F009F3F3F /* SettingsViewController+tableView.swift */; };
+		6D727CD82843BF86009F3F3F /* SegmentedControlTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D727CD62843BF86009F3F3F /* SegmentedControlTableViewCell.swift */; };
+		6D727CD92843BF86009F3F3F /* SegmentedControlTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D727CD72843BF86009F3F3F /* SegmentedControlTableViewCell.xib */; };
+		6D727CDB2843BFD0009F3F3F /* SegmentedControlTableViewCellAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D727CDA2843BFD0009F3F3F /* SegmentedControlTableViewCellAction.swift */; };
+		6D727CDD2843C260009F3F3F /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D727CDC2843C260009F3F3F /* SettingsManager.swift */; };
+		6D727CE02843C29D009F3F3F /* SortOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D727CDF2843C29D009F3F3F /* SortOption.swift */; };
 		6DA50A4B28437AD1002EA331 /* CheckPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA50A4A28437AD1002EA331 /* CheckPasswordViewController.swift */; };
 		6DA50A4E28437FA7002EA331 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA50A4D28437FA7002EA331 /* AuthManager.swift */; };
 		6DA50A512843827F002EA331 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 6DA50A502843827F002EA331 /* KeychainAccess */; };
@@ -54,6 +61,13 @@
 		6D0C4FCB2831F8D70069BEF3 /* ImagesViewController+collectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImagesViewController+collectionView.swift"; sourceTree = "<group>"; };
 		6D0C4FCD2831F9750069BEF3 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		6D0C4FCE2831F9750069BEF3 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		6D727CD12843BDCD009F3F3F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		6D727CD42843BE1F009F3F3F /* SettingsViewController+tableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsViewController+tableView.swift"; sourceTree = "<group>"; };
+		6D727CD62843BF86009F3F3F /* SegmentedControlTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlTableViewCell.swift; sourceTree = "<group>"; };
+		6D727CD72843BF86009F3F3F /* SegmentedControlTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SegmentedControlTableViewCell.xib; sourceTree = "<group>"; };
+		6D727CDA2843BFD0009F3F3F /* SegmentedControlTableViewCellAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlTableViewCellAction.swift; sourceTree = "<group>"; };
+		6D727CDC2843C260009F3F3F /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
+		6D727CDF2843C29D009F3F3F /* SortOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortOption.swift; sourceTree = "<group>"; };
 		6DA50A4A28437AD1002EA331 /* CheckPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPasswordViewController.swift; sourceTree = "<group>"; };
 		6DA50A4D28437FA7002EA331 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		6DA50A5228438383002EA331 /* CheckPasswordViewControllerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPasswordViewControllerState.swift; sourceTree = "<group>"; };
@@ -93,8 +107,10 @@
 				6D0C4FA0283127480069BEF3 /* AppDelegate.swift */,
 				6D0C4FA2283127480069BEF3 /* SceneDelegate.swift */,
 				6DA50A4D28437FA7002EA331 /* AuthManager.swift */,
+				6D727CDE2843C292009F3F3F /* SettingsManager */,
 				6D0C4FC3283139100069BEF3 /* ImagesViewController */,
 				6DA50A4C28437ADB002EA331 /* CheckPasswordViewController */,
+				6D727CD32843BDDD009F3F3F /* SettingsViewController */,
 				6D0C4FBA283129660069BEF3 /* MyFileManager */,
 				6D0C4FC828313CAF0069BEF3 /* ImageSaver */,
 				6D0C4FBD28312D740069BEF3 /* UIAlertController+infoAlert.swift */,
@@ -138,6 +154,27 @@
 				6D0C4FC628313CA20069BEF3 /* ImageSaverError.swift */,
 			);
 			path = ImageSaver;
+			sourceTree = "<group>";
+		};
+		6D727CD32843BDDD009F3F3F /* SettingsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6D727CD12843BDCD009F3F3F /* SettingsViewController.swift */,
+				6D727CD42843BE1F009F3F3F /* SettingsViewController+tableView.swift */,
+				6D727CD62843BF86009F3F3F /* SegmentedControlTableViewCell.swift */,
+				6D727CD72843BF86009F3F3F /* SegmentedControlTableViewCell.xib */,
+				6D727CDA2843BFD0009F3F3F /* SegmentedControlTableViewCellAction.swift */,
+			);
+			path = SettingsViewController;
+			sourceTree = "<group>";
+		};
+		6D727CDE2843C292009F3F3F /* SettingsManager */ = {
+			isa = PBXGroup;
+			children = (
+				6D727CDC2843C260009F3F3F /* SettingsManager.swift */,
+				6D727CDF2843C29D009F3F3F /* SortOption.swift */,
+			);
+			path = SettingsManager;
 			sourceTree = "<group>";
 		};
 		6DA50A4C28437ADB002EA331 /* CheckPasswordViewController */ = {
@@ -216,6 +253,7 @@
 				6D0C4FAD2831274A0069BEF3 /* LaunchScreen.storyboard in Resources */,
 				6D0C4FAA2831274A0069BEF3 /* Assets.xcassets in Resources */,
 				6D0C4FD02831F9760069BEF3 /* ImageCollectionViewCell.xib in Resources */,
+				6D727CD92843BF86009F3F3F /* SegmentedControlTableViewCell.xib in Resources */,
 				6D0C4FA8283127480069BEF3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -227,20 +265,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D727CDB2843BFD0009F3F3F /* SegmentedControlTableViewCellAction.swift in Sources */,
 				6D0C4FB72831293C0069BEF3 /* MyFileManager.swift in Sources */,
 				6D0C4FBC28312A200069BEF3 /* File+uiImage.swift in Sources */,
 				6DA50A5328438383002EA331 /* CheckPasswordViewControllerState.swift in Sources */,
 				6D0C4FC728313CA20069BEF3 /* ImageSaverError.swift in Sources */,
 				6D0C4FCC2831F8D70069BEF3 /* ImagesViewController+collectionView.swift in Sources */,
+				6D727CD22843BDCD009F3F3F /* SettingsViewController.swift in Sources */,
+				6D727CDD2843C260009F3F3F /* SettingsManager.swift in Sources */,
 				6DA50A4B28437AD1002EA331 /* CheckPasswordViewController.swift in Sources */,
+				6D727CD52843BE1F009F3F3F /* SettingsViewController+tableView.swift in Sources */,
 				6D0C4FB9283129600069BEF3 /* File.swift in Sources */,
 				6D0C4FA5283127480069BEF3 /* ImagesViewController.swift in Sources */,
+				6D727CE02843C29D009F3F3F /* SortOption.swift in Sources */,
 				6DA50A4E28437FA7002EA331 /* AuthManager.swift in Sources */,
 				6D0C4FCF2831F9750069BEF3 /* ImageCollectionViewCell.swift in Sources */,
 				6D0C4FC0283135930069BEF3 /* ImageSaver.swift in Sources */,
 				6D0C4FC2283138F50069BEF3 /* ImagesViewController+ImageSaverDelegate.swift in Sources */,
 				6D0C4FA1283127480069BEF3 /* AppDelegate.swift in Sources */,
 				6D0C4FCA28313E6E0069BEF3 /* MyFileManagerError.swift in Sources */,
+				6D727CD82843BF86009F3F3F /* SegmentedControlTableViewCell.swift in Sources */,
 				6D0C4FB5283128D50069BEF3 /* ImagesViewController+tableView.swift in Sources */,
 				6D0C4FC528313C930069BEF3 /* ImageSaverDelegate.swift in Sources */,
 				6D0C4FA3283127480069BEF3 /* SceneDelegate.swift in Sources */,
