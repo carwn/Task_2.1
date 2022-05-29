@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension ViewController: UITableViewDataSource {
+extension ImagesViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         files.count
