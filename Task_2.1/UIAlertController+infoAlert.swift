@@ -13,4 +13,8 @@ extension UIAlertController {
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         return alert
     }
+    
+    static func errorAlert(message: String) -> UIAlertController {
+        infoAlert(title: "Ошибка", message: message)
+    }
 }

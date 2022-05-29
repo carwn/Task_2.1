@@ -112,7 +112,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Button"/>
                                         <connections>
-                                            <action selector="buttonPressed" destination="EIh-Nx-tFK" eventType="touchUpInside" id="5xf-kK-cnd"/>
+                                            <action selector="mainButtonPressed" destination="EIh-Nx-tFK" eventType="touchUpInside" id="5xf-kK-cnd"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -121,18 +121,28 @@
                                     <constraint firstItem="bGu-ib-a2o" firstAttribute="leading" secondItem="hF8-Al-wSb" secondAttribute="leading" id="y9c-1G-iT6"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ER4-rh-fGg">
+                                <rect key="frame" x="136.5" y="819" width="141" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Сбросить пароль"/>
+                                <connections>
+                                    <action selector="clearPasswordButtonPressed:" destination="EIh-Nx-tFK" eventType="touchUpInside" id="nqR-BV-ta2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7B2-fe-HDP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="7B2-fe-HDP" firstAttribute="trailing" secondItem="hF8-Al-wSb" secondAttribute="trailing" constant="24" id="FUx-b7-JBw"/>
                             <constraint firstItem="hF8-Al-wSb" firstAttribute="centerY" secondItem="32s-8d-K7H" secondAttribute="centerY" multiplier="0.85" id="WU3-L6-57B"/>
+                            <constraint firstItem="ER4-rh-fGg" firstAttribute="centerX" secondItem="32s-8d-K7H" secondAttribute="centerX" id="aUV-1S-ttW"/>
                             <constraint firstItem="hF8-Al-wSb" firstAttribute="leading" secondItem="7B2-fe-HDP" secondAttribute="leading" constant="24" id="kN6-2d-35z"/>
+                            <constraint firstItem="7B2-fe-HDP" firstAttribute="bottom" secondItem="ER4-rh-fGg" secondAttribute="bottom" constant="12" id="q7A-72-7KM"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xP3-lF-KIl"/>
                     <connections>
-                        <outlet property="button" destination="GyV-ot-3zO" id="7CU-Na-Icf"/>
+                        <outlet property="mainButton" destination="GyV-ot-3zO" id="7CU-Na-Icf"/>
                         <outlet property="textField" destination="bGu-ib-a2o" id="fgD-he-AiG"/>
                         <segue destination="SO7-wB-Xt6" kind="presentation" identifier="toFirstMainScreen" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="tgp-FP-NVn"/>
                     </connections>
