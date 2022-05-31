@@ -44,6 +44,6 @@ extension SettingsViewController: UITableViewDelegate {
         guard indexPath == IndexPath(row: 1, section: 0) else {
             return
         }
-        print("open password change")
+        openChangePasswordScreen()
     }
 }

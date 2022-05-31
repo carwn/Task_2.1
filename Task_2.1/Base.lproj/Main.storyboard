@@ -119,22 +119,23 @@
                     <navigationItem key="navigationItem" title="Settings" id="LmS-cm-PAV"/>
                     <connections>
                         <outlet property="tableView" destination="2NS-u4-RVr" id="PBc-cG-fBz"/>
+                        <segue destination="EIh-Nx-tFK" kind="presentation" identifier="toChangePassword" id="TPC-Iq-TFP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cde-gc-kfs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1376.8115942028987" y="1347.9910714285713"/>
         </scene>
-        <!--Check Password View Controller-->
+        <!--Password View Controller-->
         <scene sceneID="AQg-Dc-QtK">
             <objects>
-                <viewController id="EIh-Nx-tFK" customClass="CheckPasswordViewController" customModule="Task_2_1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="EIh-Nx-tFK" customClass="PasswordViewController" customModule="Task_2_1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="32s-8d-K7H">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="hF8-Al-wSb">
-                                <rect key="frame" x="24" y="336.5" width="366" height="89"/>
+                                <rect key="frame" x="24" y="313.5" width="366" height="89"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bGu-ib-a2o">
                                         <rect key="frame" x="0.0" y="0.0" width="366" height="34"/>
@@ -156,7 +157,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ER4-rh-fGg">
-                                <rect key="frame" x="136.5" y="819" width="141" height="31"/>
+                                <rect key="frame" x="136.5" y="799" width="141" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Сбросить пароль"/>
                                 <connections>

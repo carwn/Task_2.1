@@ -1,5 +1,5 @@
 //
-//  CheckPasswordViewController.swift
+//  PasswordViewController.swift
 //  Task_2.1
 //
 //  Created by Александр Шелихов on 29.05.2022.
@@ -7,14 +7,16 @@
 
 import UIKit
 
-class CheckPasswordViewController: UIViewController {
+class PasswordViewController: UIViewController {
     
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var mainButton: UIButton!
     
+    var onlyChangePasswordMode = false
+    
     private let authManager = AuthManager.shared
     private var firstTryPassword: String?
-    private var state: CheckPasswordViewControllerState! {
+    private var state: PasswordViewControllerState! {
         didSet {
             switch state {
             case .checkPassword:
@@ -58,7 +60,7 @@ class CheckPasswordViewController: UIViewController {
     
     private func checkPasswordAndStartApp(password: String) {
         if authManager.inputedPasswordIsCorrect(password) {
-            startApp()
+            dismissSelf()
         } else {
             showError("Пароль не верный")
             updateStateFromAuthManager()
@@ -82,14 +84,22 @@ class CheckPasswordViewController: UIViewController {
             return
         }
         authManager.setNewPassword(password)
-        startApp()
+        dismissSelf()
     }
     
-    private func startApp() {
-        performSegue(withIdentifier: "toFirstMainScreen", sender: nil)
+    private func dismissSelf() {
+        if onlyChangePasswordMode {
+            dismiss(animated: true)
+        } else {
+            performSegue(withIdentifier: "toFirstMainScreen", sender: nil)
+        }
     }
     
     private func updateStateFromAuthManager() {
+        guard !onlyChangePasswordMode else {
+            state = .inputPasswordFirst
+            return
+        }
         state = authManager.passwordIsSet ? .checkPassword : .inputPasswordFirst
     }
     
