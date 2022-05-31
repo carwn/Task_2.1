@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension ViewController: UICollectionViewDataSource {
+extension ImagesViewController: UICollectionViewDataSource {
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         files.count
@@ -29,7 +29,7 @@ extension ViewController: UICollectionViewDataSource {
     }
 }
 
-extension ViewController: UICollectionViewDelegateFlowLayout {
+extension ImagesViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let paddingSpace = Constants.itemsInset * (Constants.itemsPerRow + 1)
         let availableWidth = collectionView.bounds.width - paddingSpace
@@ -49,7 +49,7 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-extension ViewController {
+extension ImagesViewController {
     enum Constants {
         static let itemsPerRow: CGFloat = 3
         static let itemsInset: CGFloat = 15

@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension ViewController: ImageSaverDelegate {
+extension ImagesViewController: ImageSaverDelegate {
     func presentUIImagePickerController(_ vc: UIImagePickerController) {
         present(vc, animated: true)
     }
