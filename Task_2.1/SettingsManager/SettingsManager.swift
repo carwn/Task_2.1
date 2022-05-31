@@ -27,7 +27,11 @@ class SettingsManager {
             }
         }
         set {
+            guard sortOption != newValue else {
+                return
+            }
             userDefaults.set(newValue.rawValue, forKey: Keys.sortOption.rawValue)
+            NotificationCenter.default.post(name: Self.sortOptionDidChangeNotification, object: nil, userInfo: nil)
             print("new sort option:", newValue)
         }
     }

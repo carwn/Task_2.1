@@ -30,11 +30,20 @@ class ImagesViewController: UIViewController {
         collectionView.register(UINib(nibName: "ImageCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
         collectionView.allowsSelection = false
         [spinner, emptyLabel, collectionView].forEach { $0.isHidden = true }
+        NotificationCenter.default.addObserver(forName: SettingsManager.sortOptionDidChangeNotification,
+                                               object: nil,
+                                               queue: OperationQueue.main) { [weak self] _ in
+            self?.reloadFiles()
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         reloadFiles()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     func reloadFiles() {
@@ -43,7 +52,15 @@ class ImagesViewController: UIViewController {
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             do {
                 guard let self = self else { return }
-                let files = try self.fileManager.files()
+                let sortOption = SettingsManager.shared.sortOption
+                let files = try self.fileManager.files().sorted(by: { lhs, rhs in
+                    switch sortOption {
+                    case .ascending:
+                        return lhs.title < rhs.title
+                    case .descending:
+                        return lhs.title > rhs.title
+                    }
+                })
                 DispatchQueue.main.async { [weak self] in
                     guard let self = self else { return }
                     self.spinner.isHidden = true
